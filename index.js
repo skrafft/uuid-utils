@@ -27,7 +27,7 @@ function enlargeUUID(shortId, translator) {
 }
 
 function shorten8 (longId, translator) {
-  const base58Id = shortenUUID(longId, translator).substr(-8);
+  return shortenUUID(longId, translator).substr(-8);
 }
 
 function order(uuid) {
