@@ -27,7 +27,11 @@ function enlargeUUID(shortId, translator) {
 }
 
 function shorten8 (longId, translator) {
-  return shortenUUID(longId, translator).substr(-8);
+  const cleanId = longId.toLowerCase().replace(/-/g,'')
+  if (/^[0-9a-f]+$/i.test(cleanId)) {
+    return shortenUUID(longId, translator).substr(-8);
+  }
+  return longId;
 }
 
 function order(uuid) {
